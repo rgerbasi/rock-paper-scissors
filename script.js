@@ -1,6 +1,8 @@
 // Script
-console.log("hello World")
+//step 1
+//console.log("hello World")
 
+//Step 2
 //returns random "rock" "paper" "scissors"
 //generate number between 0 and 1
 //multiply times 100 to get a number between 0 and 100 and round down
@@ -17,4 +19,13 @@ function getComputerChoice(){
     }
 
 }
+
+//Step 3
+
+function getHumanChoice() {
+    let response = ""
+    response = prompt("Rock paper or Scissors?")
+    return response
+}
 console.log(getComputerChoice())
+console.log(getHumanChoice())
