@@ -31,8 +31,6 @@ let humanScore = 0
 let computerScore = 0
 
 //step 5 logic to play single round
-const computerSelection = getComputerChoice()
-const humanSelection = getHumanChoice().toLowerCase()
 
 function playRound(humanChoice, computerChoice){
     console.log(humanChoice+ " vs. "+ computerChoice)
@@ -60,8 +58,20 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-console.log(playRound("rock", "paper"))
-console.log(playRound("scissors", "rock"))
-console.log(playRound("paper", "rock"))
-// console.log(getComputerChoice())
-// console.log(getHumanChoice())
+//Step 6 play 5 rounds
+function playGame() {
+    const rounds = 5
+    for (let i = 0; i < rounds; i++) {
+        const computerSelection = getComputerChoice()
+        const humanSelection = getHumanChoice().toLowerCase()
+        playRound(humanSelection, computerSelection)
+        console.log(`Round ${i+1} - You:${humanScore} CPU: ${computerScore}`)
+    }
+
+}
+const startbutton = document.getElementById("gamebutton")
+startbutton.addEventListener('click', playGame)
+
+// console.log(playRound("rock", "paper"))
+// console.log(playRound("scissors", "rock"))
+// console.log(playRound("paper", "rock"))
