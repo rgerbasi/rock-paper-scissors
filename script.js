@@ -19,13 +19,49 @@ function getComputerChoice(){
     }
 
 }
-
 //Step 3
-
+//Prompt human choice
 function getHumanChoice() {
-    let response = ""
-    response = prompt("Rock paper or Scissors?")
+    let response = null
+    response = prompt("Rock Paper or Scissors?")
     return response
 }
-console.log(getComputerChoice())
-console.log(getHumanChoice())
+//step 4 declare player score variables
+let humanScore = 0
+let computerScore = 0
+
+//step 5 logic to play single round
+const computerSelection = getComputerChoice()
+const humanSelection = getHumanChoice().toLowerCase()
+
+function playRound(humanChoice, computerChoice){
+    console.log(humanChoice+ " vs. "+ computerChoice)
+    //round outcome
+    switch ( true ){
+        //winning cases
+        case (humanChoice == "rock" && computerChoice == "scissors"):
+        case (humanChoice == "paper" && computerChoice == "rock"):
+        case (humanChoice == "scissors" && computerChoice == "paper"):
+            humanScore++
+            console.log(`You win! ${humanChoice} beats ${computerChoice}.`)
+            break
+        //losing cases
+        case (humanChoice == "rock" && computerChoice == "paper"):
+        case (humanChoice == "paper" && computerChoice == "scissors"):
+        case (humanChoice == "scissors" && computerChoice == "rock"):
+            computerScore++
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}.`)
+            break
+        //ties
+        case (humanChoice == "rock" && computerChoice == "rock"):
+        case (humanChoice == "paper" && computerChoice == "paper"):
+        case (humanChoice == "scissors" && computerChoice == "scissors"):
+            console.log("Tie!")
+    }
+}
+
+console.log(playRound("rock", "paper"))
+console.log(playRound("scissors", "rock"))
+console.log(playRound("paper", "rock"))
+// console.log(getComputerChoice())
+// console.log(getHumanChoice())
