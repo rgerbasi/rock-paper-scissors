@@ -60,15 +60,25 @@ function playRound(humanChoice, computerChoice){
 
 //Step 6 play 5 rounds
 function playGame() {
+
     const rounds = 5
-    for (let i = 0; i < rounds; i++) {
-        const computerSelection = getComputerChoice()
-        const humanSelection = getHumanChoice().toLowerCase()
-        playRound(humanSelection, computerSelection)
-        console.log(`Round ${i+1} - You:${humanScore} CPU: ${computerScore}`)
-    }
+    // for (let i = 0; i < rounds; i++) {
+    //     const computerSelection = getComputerChoice()
+    //     const humanSelection = getHumanChoice().toLowerCase()
+    //     playRound(humanSelection, computerSelection)
+    //     console.log(`Round ${i+1} - You:${humanScore} CPU: ${computerScore}`)
+    // }
 
 }
+const buttonContainer = document.querySelector(".container")
+
+
+function toggleVisibility(element){
+    const node = document.querySelector("div")
+    node.classList.toggle("hide");
+    element.classList.toggle("hide")
+}
+
 const startbutton = document.getElementById("gamebutton")
 startbutton.addEventListener('click', playGame)
 

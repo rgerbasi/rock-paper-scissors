@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-   
+   <style>
+        /* not best practice but feeling lazy right now */
+        body { display:flex; flex-flow: column nowrap; align-items: center;}
+        button {margin: 3rem 1rem; padding: 1rem;}
+        .container{ display: flex; justify-content: center; transition: all 2s;}
+
+        .hide {display: none;}
+        .scoreBoard {display: flex; justify-content: space-between;}
+        .scoreContainer {display: flex; flex-flow: column nowrap; align-items: center;}
+   </style>
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
+    <div>
+        <h3>Welcome to Rock Paper Scissors!</h3>
+        <div class="scoreBoard">
+            <div class="scoreContainer">
+                <h3>Your score:</h3>
+                <div id="playerScore">1</div>
+            </div>
+            <div class="scoreContainer">
+                <h3>Oponent score:</h3>
+                <div id="computerScore">2</div>
+            </div>
+        </div>
+    </div>
     <button id="gamebutton">Play Game</button>
+    <div class="container ">
+        <button>Rock</button>
+        <button>Paper</button>
+        <button>Scissors</button>
+    </div>
+
+    <!-- TO DO
+        add 3 buttons for each selection
+        event listener with correct selection
+        div to display results and change the console logs into dom methods
+        Display running score and announce a winner once one player reaches 5 points
+
+    -->
     <script src="script.js"></script>
 </body>
 </html>
