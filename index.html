@@ -6,35 +6,47 @@
     <title>Rock Paper Scissors</title>
    <style>
         /* not best practice but feeling lazy right now */
-        body { display:flex; flex-flow: column nowrap; align-items: center;}
+        * {transition: all 1s;}
+        body { display:flex; flex-flow: column nowrap; align-items: center; opacity: 1;}
         button {margin: 3rem 1rem; padding: 1rem;}
-        .container{ display: flex; justify-content: center; transition: all 2s;}
+        .container{ display: flex; justify-content: center; }
 
-        .hide {display: none;}
+        .hide {visibility: hidden; opacity: 0; }
         .scoreBoard {display: flex; justify-content: space-between;}
         .scoreContainer {display: flex; flex-flow: column nowrap; align-items: center;}
+        #match {white-space: "pre-line";}
+        dialog {margin-top: 15%;}
    </style>
 </head>
 <body>
+    <dialog id="game-outcome">
+        <h1 id="win"></h1>
+        <button id="end-button">Play Again!</button>
+    </dialog>
+
     <h1>Rock Paper Scissors</h1>
     <div>
         <h3>Welcome to Rock Paper Scissors!</h3>
-        <div class="scoreBoard">
+        <div class="scoreBoard hide">
             <div class="scoreContainer">
                 <h3>Your score:</h3>
-                <div id="playerScore">1</div>
+                <div id="playerScore">0</div>
             </div>
             <div class="scoreContainer">
                 <h3>Oponent score:</h3>
-                <div id="computerScore">2</div>
+                <div id="computerScore">0</div>
             </div>
         </div>
     </div>
     <button id="gamebutton">Play Game</button>
-    <div class="container ">
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
+    <p class="instruction hide">Select your choice to play the round!</p>
+    <div id="round" class="hide">Round 1</div>
+    <div id="match" class="hide"></div>
+    <div id="round-outcome" class="hide"></div>
+    <div class="container hide">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
     </div>
 
     <!-- TO DO
